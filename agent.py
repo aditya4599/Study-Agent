@@ -74,3 +74,6 @@ def get_progress(self) -> dict:
             (completed / total) * 100, 2
         ) if total else 0,
     }
+def create_study_plan(self, topics: list[str]) -> None:
+    for topic in topics:
+        self.add_task(topic)
