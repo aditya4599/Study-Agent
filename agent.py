@@ -62,3 +62,15 @@ def get_tasks(self) -> list[dict]:
         }
         for task in self.tasks
     ]
+def get_progress(self) -> dict:
+    completed = sum(task.completed for task in self.tasks)
+    total = len(self.tasks)
+
+    return {
+        "student": self.student_name,
+        "completed": completed,
+        "total": total,
+        "percentage": round(
+            (completed / total) * 100, 2
+        ) if total else 0,
+    }
