@@ -49,3 +49,16 @@ if __name__ == "__main__":
     agent.add_task("Learn AI Agents")
 
     print(agent.get_progress())
+    
+def complete_task(self, index: int) -> None:
+    if 0 <= index < len(self.tasks):
+        self.tasks[index].completed = True
+
+def get_tasks(self) -> list[dict]:
+    return [
+        {
+            "topic": task.topic,
+            "completed": task.completed,
+        }
+        for task in self.tasks
+    ]
